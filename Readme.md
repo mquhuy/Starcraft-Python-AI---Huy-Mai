@@ -1,3 +1,5 @@
+Update: Jul 10th, 2018: The bot can now play a full game, but the strategy is still hard coded.
+
 This is an AI that plays the game Starcraft II. Simply install python 3, the package py-sc2 and install Starcraft II to run the bot.
 
 Change difficulty level by replacing "Easy" in <i>Computer(Race.Terran, Difficulty.Easy)</i> with the difficult level you want.
