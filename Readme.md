@@ -1,6 +1,7 @@
-Update: Jul 10th, 2018: The bot can now play a full game, but the strategy is still hard coded.
+Update: Jul 12th, 2018: Added openCV to redraw the map and simplify the data. In the process of gathering training data.
 
-This is an AI that plays the game Starcraft II. Simply install python 3, the package py-sc2 and install Starcraft II to run the bot. Run the file startgame.py using python 3.
-(Change difficulty level by replacing "Easy" in <i>Computer(Race.Terran, Difficulty.Easy)</i> with the difficult level you want.)
+This is an AI that plays the game Starcraft II. To train the model, run the file training.py using python 3.
 
-Note: Please install the game in the default location, or else you may need to change the path.py file in your ec2 package to point to the right folder.
+(Change difficulty level by replacing "Hard" in <i>Computer(Race.Terran, Difficulty.Hard)</i> with the difficult level you want.)
+
+Note: Change the value of os.environ["SC2PATH"] in the file to your correct Starcraft II folder.
