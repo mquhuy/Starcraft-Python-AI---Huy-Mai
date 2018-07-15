@@ -97,7 +97,7 @@ class HuyAI(sc2.BotAI):
             if scout.is_idle:
                 enemy_location = self.enemy_start_locations[0]
                 move_to = self.random_location_variance(enemy_location)
-                print(move_to)
+                # print(move_to)
                 await self.do(scout.move(move_to))
 
         else:
@@ -168,7 +168,7 @@ class HuyAI(sc2.BotAI):
 
                 y = np.zeros(4)
                 y[choice] = 1
-                print(y)
+                # print(y)
                 self.train_data.append([y, self.flipped])
 
     async def intel(self):
@@ -184,12 +184,12 @@ class HuyAI(sc2.BotAI):
              ROBOTICSFACILITY: [5, [215, 155, 0]],
              # OBSERVER: [1, [255, 255, 255]],
             }
-        print(self.game_info.map_size)
+        # print(self.game_info.map_size)
         game_data = np.zeros((self.game_info.map_size[1], self.game_info.map_size[0], 3), np.uint8)
         for unit_type in draw_dict:
             for UNIT in self.units(unit_type):
                 unit_pos = UNIT.position
-                print(unit_pos)
+                # print(unit_pos)
                 cv2.circle(game_data, (int(unit_pos[0]), int(unit_pos[1])), draw_dict[unit_type][0], draw_dict[unit_type][1], -1)  # draw a circle where the nexus is
 
         # Enemy structures

@@ -23,9 +23,8 @@ class HuyAI(sc2.BotAI):
         print('---on_end called---')
         print(game_result)
 
-        if game_result == Result.Victory:
-            np.save("train_data/{}.npy".format(str(int(time.time()))), np.array(self.train_data))
-
+        # if game_result == Result.Victory:
+            # np.save("train_data/{}.npy".format(str(int(time.time()))), np.array(self.train_data))
 
     async def on_step(self, iteration):
         self.iteration = iteration
@@ -227,13 +226,13 @@ class HuyAI(sc2.BotAI):
         if vespene_ratio > 1.0:
             vespene_ratio = 1.0
 
-        population_ratio = self.supply_left/self.supply_cap
+        population_ratio = self.supply_left/(self.supply_cap + 1e-6)
         if population_ratio > 1.0:
             population_ratio = 1.0
 
         plausible_supply = self.supply_cap/200.0
 
-        military_weight = len(self.units(VOIDRAY))/(self.supply_cap-self.supply_left+1e-6)
+        military_weight = len(self.units(VOIDRAY))/(self.supply_cap-self.supply_left + 1e-6)
         if military_weight > 1.0:
             military_weight = 1.0
 
