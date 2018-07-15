@@ -17,9 +17,3 @@ maps/
 mini_games/
 
 *.SC2Replay
-trained_model.h5
-training-model-2.py
-X.npy
-Y.npy
-trained_model.h5
-trained_model.h5
